@@ -80,12 +80,8 @@ const animate = () => {
 
 button.addEventListener('click', () => {
     console.log("start new game!");
-    initGrid()
-    tetrisScore = 0;
-    tetrisLines = 0;
-    showLines.value = 0;
-    showScore.value = 0;
-    button.disabled = true;
+    initGrid();
+    [tetrisScore, tetrisLines, showLines.value, showScore.value, button.disabled] = [0, 0, 0, 0, true];
     updateNextBox(nextShapeArr[1]);
     intervalId = setInterval(animate, shapeSpeed);
 });
